@@ -2,7 +2,7 @@ package entity;
 
 import java.io.Serializable;
 
-public class Result implements Serializable {
+public class Result<T> implements Serializable {
     // 是否成功
     private Boolean flag;
     // 返回码
@@ -10,7 +10,7 @@ public class Result implements Serializable {
     // 返回信息
     private String message;
     // 返回数据
-    private Object data;
+    private T data;
 
     public Boolean getFlag() {
         return flag;
@@ -36,11 +36,11 @@ public class Result implements Serializable {
         this.message = message;
     }
 
-    public Object getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(T data) {
         this.data = data;
     }
 
@@ -53,7 +53,7 @@ public class Result implements Serializable {
         this.message = message;
     }
 
-    public Result(Boolean flag, Integer code, String message, Object data) {
+    public Result(Boolean flag, Integer code, String message, T data) {
 
         this.flag = flag;
         this.code = code;

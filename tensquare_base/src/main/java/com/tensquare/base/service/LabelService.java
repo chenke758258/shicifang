@@ -1,8 +1,10 @@
 package com.tensquare.base.service;
 
 import com.tensquare.base.pojo.Label;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
+import java.util.Map;
 
 public interface LabelService {
     // 查询全部标签
@@ -19,4 +21,10 @@ public interface LabelService {
 
     // 根据ID删除标签
     void deleteById(String id);
+
+    // 多条件查询
+    List<Label> findSearch(Map searchMap);
+
+    // 多条件分页查询
+    Page<Label> findSearch(Map searchMap, int page, int size);
 }
